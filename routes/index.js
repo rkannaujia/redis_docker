@@ -6,6 +6,7 @@ const getUrlPrefix = config.app.prefix;
 
 const registerController = require('../controllers/register')
 const loginController = require('../controllers/login')
+const createTodoController = require('../controllers/createTodo')
 
 console.log('getUrlPrefix',getUrlPrefix);
 
@@ -21,6 +22,9 @@ router.post(getUrlPrefix + '/register',(req,res)=>{
 });
 router.post(getUrlPrefix + '/login',(req,res)=>{
     loginController.login(req,res)   
+});
+router.post(getUrlPrefix + '/createTodo',(req,res)=>{
+    createTodoController.createTodo(req,res)   
 });
 
 
